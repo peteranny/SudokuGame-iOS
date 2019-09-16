@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA89BE5A232F894600B3FF20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89BE59232F894600B3FF20 /* AppDelegate.swift */; };
+		BA89BE5C232F894600B3FF20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89BE5B232F894600B3FF20 /* ViewController.swift */; };
+		BA89BE5F232F894600B3FF20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA89BE5D232F894600B3FF20 /* Main.storyboard */; };
+		BA89BE61232F894700B3FF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA89BE60232F894700B3FF20 /* Assets.xcassets */; };
+		BA89BE64232F894700B3FF20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA89BE62232F894700B3FF20 /* LaunchScreen.storyboard */; };
+		BA89BE6D232F89D200B3FF20 /* WordPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89BE6C232F89D200B3FF20 /* WordPuzzleView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BA89BE56232F894600B3FF20 /* WordPuzzleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordPuzzleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA89BE59232F894600B3FF20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA89BE5B232F894600B3FF20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA89BE5E232F894600B3FF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA89BE60232F894700B3FF20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA89BE63232F894700B3FF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA89BE65232F894800B3FF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA89BE6C232F89D200B3FF20 /* WordPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPuzzleView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA89BE53232F894600B3FF20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA89BE4D232F894600B3FF20 = {
+			isa = PBXGroup;
+			children = (
+				BA89BE58232F894600B3FF20 /* WordPuzzleGame */,
+				BA89BE57232F894600B3FF20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA89BE57232F894600B3FF20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA89BE56232F894600B3FF20 /* WordPuzzleGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA89BE58232F894600B3FF20 /* WordPuzzleGame */ = {
+			isa = PBXGroup;
+			children = (
+				BA89BE65232F894800B3FF20 /* Info.plist */,
+				BA89BE59232F894600B3FF20 /* AppDelegate.swift */,
+				BA89BE60232F894700B3FF20 /* Assets.xcassets */,
+				BA89BE6E232F8EA200B3FF20 /* Controller */,
+				BA89BE6B232F89C600B3FF20 /* View */,
+			);
+			path = WordPuzzleGame;
+			sourceTree = "<group>";
+		};
+		BA89BE6B232F89C600B3FF20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA89BE62232F894700B3FF20 /* LaunchScreen.storyboard */,
+				BA89BE5D232F894600B3FF20 /* Main.storyboard */,
+				BA89BE6C232F89D200B3FF20 /* WordPuzzleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA89BE6E232F8EA200B3FF20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA89BE5B232F894600B3FF20 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA89BE55232F894600B3FF20 /* WordPuzzleGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA89BE68232F894800B3FF20 /* Build configuration list for PBXNativeTarget "WordPuzzleGame" */;
+			buildPhases = (
+				BA89BE52232F894600B3FF20 /* Sources */,
+				BA89BE53232F894600B3FF20 /* Frameworks */,
+				BA89BE54232F894600B3FF20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordPuzzleGame;
+			productName = WordPuzzleGame;
+			productReference = BA89BE56232F894600B3FF20 /* WordPuzzleGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA89BE4E232F894600B3FF20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Peteranny;
+				TargetAttributes = {
+					BA89BE55232F894600B3FF20 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = BA89BE51232F894600B3FF20 /* Build configuration list for PBXProject "WordPuzzleGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA89BE4D232F894600B3FF20;
+			productRefGroup = BA89BE57232F894600B3FF20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA89BE55232F894600B3FF20 /* WordPuzzleGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA89BE54232F894600B3FF20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA89BE64232F894700B3FF20 /* LaunchScreen.storyboard in Resources */,
+				BA89BE61232F894700B3FF20 /* Assets.xcassets in Resources */,
+				BA89BE5F232F894600B3FF20 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA89BE52232F894600B3FF20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA89BE5C232F894600B3FF20 /* ViewController.swift in Sources */,
+				BA89BE6D232F89D200B3FF20 /* WordPuzzleView.swift in Sources */,
+				BA89BE5A232F894600B3FF20 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA89BE5D232F894600B3FF20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA89BE5E232F894600B3FF20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA89BE62232F894700B3FF20 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA89BE63232F894700B3FF20 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA89BE66232F894800B3FF20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA89BE67232F894800B3FF20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA89BE69232F894800B3FF20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD3ZH8Y4QF;
+				INFOPLIST_FILE = WordPuzzleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peteranny.WordPuzzleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA89BE6A232F894800B3FF20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD3ZH8Y4QF;
+				INFOPLIST_FILE = WordPuzzleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peteranny.WordPuzzleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA89BE51232F894600B3FF20 /* Build configuration list for PBXProject "WordPuzzleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA89BE66232F894800B3FF20 /* Debug */,
+				BA89BE67232F894800B3FF20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA89BE68232F894800B3FF20 /* Build configuration list for PBXNativeTarget "WordPuzzleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA89BE69232F894800B3FF20 /* Debug */,
+				BA89BE6A232F894800B3FF20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA89BE4E232F894600B3FF20 /* Project object */;
+}
