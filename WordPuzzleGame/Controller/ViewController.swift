@@ -12,22 +12,83 @@ class ViewController: UIViewController {
     @IBOutlet weak var wordPuzzleView: WordPuzzleView!
     @IBOutlet weak var textField: UITextField!
 
-    var grids: [[Int]] = {
-        var grids: [[Int]] = []
-        for i in 0..<8 {
-            grids.append([])
-            for _ in 0..<8 {
-                grids[i].append(0)
+    let fixedGrids: [[Int?]] = [
+        [  2,  6,  9,  3,  5,  8,  4,  1,  7],
+        [  4,  7,  3,  9,  1,  6,  2,  8,  5],
+        [  8,  1,nil,  4,  7,  2,nil,  6,  3],
+        [  7,  5,  2,  1,  9,  4,  6,  3,  8],
+        [  1,  9,  4,  8,  6,  3,  7,  5,  2],
+        [  6,  3,  8,  7,  2,nil,  1,  9,  4],
+        [  3,  4,  7,  6,  8,  1,  5,  2,  9],
+        [  5,  8,  1,  2,  4,  9,  3,  7,  6],
+        [  9,  2,  6,nil,  3,  7,nil,  4,  1],
+    ]
+    var grids: [[Int?]] = [] {
+        didSet {
+            wordPuzzleView.setNeedsDisplay()
+            if hasDoneSudoku {
+                win()
             }
         }
-        return grids
-    }()
+    }
+    var hasDoneHorizontalSudoku: Bool {
+        for i in 0..<9 {
+            var set: Set<Int> = []
+            for j in 0..<9 {
+                guard let num = grids[i][j] else {
+                    return false
+                }
+                if set.contains(num) {
+                    return false
+                }
+                set.insert(num)
+            }
+        }
+        return true
+    }
+    var hasDoneVerticalSudoku: Bool {
+        for i in 0..<9 {
+            var set: Set<Int> = []
+            for j in 0..<9 {
+                guard let num = grids[j][i] else {
+                    return false
+                }
+                if set.contains(num) {
+                    return false
+                }
+                set.insert(num)
+            }
+        }
+        return true
+    }
+    var hasDoneSquareSudoku: Bool {
+        for i in 0..<9 {
+            var set: Set<Int> = []
+            for j in (i/3)*3 ..< (i/3)*3 + 3 {
+                for k in (i%3)*3 ..< (i%3)*3 + 3 {
+                    guard let num = grids[j][k] else {
+                        return false
+                    }
+                    if set.contains(num) {
+                        return false
+                    }
+                    set.insert(num)
+                }
+            }
+        }
+        return true
+    }
+    var hasDoneSudoku: Bool {
+        return hasDoneHorizontalSudoku && hasDoneVerticalSudoku && hasDoneSquareSudoku
+    }
     var highlightedIndexPath: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         wordPuzzleView.dataSource = self
+        
+        grids = fixedGrids
         
         NotificationCenter.default.addObserver(self, selector: #selector(willKeyboardShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willKeyboardHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -39,6 +100,9 @@ class ViewController: UIViewController {
         }
         let point = sender.location(in: wordPuzzleView)
         let indexPath = wordPuzzleView.indexPath(on: point)
+        guard !isFixed(at: indexPath) else {
+            return
+        }
         let rect = wordPuzzleView.rect(for: indexPath)
         highlightedIndexPath = indexPath
         textField.frame = rect
@@ -47,10 +111,15 @@ class ViewController: UIViewController {
     }
     
     @objc func doneUpdateHighlightedGrid() {
-        if let indexPath = highlightedIndexPath, let num = Int(textField.text ?? "") {
-            cancelUpdateHighlightedGrid()
+        guard let indexPath = highlightedIndexPath else {
+            return
+        }
+        let num = Int(textField.text ?? "")
+        cancelUpdateHighlightedGrid()
+        if let num = num {
             grids[indexPath.section][indexPath.row] = num
-            wordPuzzleView.setNeedsDisplay()
+        } else {
+            grids[indexPath.section][indexPath.row] = nil
         }
     }
     
@@ -71,6 +140,19 @@ class ViewController: UIViewController {
     @objc func willKeyboardHide(_ notification: Notification) {
         view.bounds.origin.y = 0
     }
+    
+    @IBAction func didTapResetButton(_ sender: UIButton) {
+        grids = fixedGrids
+    }
+    
+    func win() {
+        let alertController: UIAlertController = {
+            let alert = UIAlertController(title: "You Win", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            return alert
+        }()
+        present(alertController, animated: true)
+    }
 }
 
 extension ViewController: WordPuzzleViewDataSource {
@@ -82,8 +164,12 @@ extension ViewController: WordPuzzleViewDataSource {
         return grids.first?.count ?? 0
     }
     
-    func grid(at indexPath: IndexPath) -> Int {
+    func grid(at indexPath: IndexPath) -> Int? {
         return grids[indexPath.section][indexPath.row]
+    }
+    
+    func isFixed(at indexPath: IndexPath) -> Bool {
+        return fixedGrids[indexPath.section][indexPath.row] != nil
     }
     
     var indexPathForHighlightedGrid: IndexPath? {
@@ -108,7 +194,11 @@ extension ViewController: UITextFieldDelegate {
             toolbar.sizeToFit()
             return toolbar
         }()
-        textField.text = String(grids[indexPath.section][indexPath.row])
+        if let num = grids[indexPath.section][indexPath.row] {
+            textField.text = "\(num)"
+        } else {
+            textField.text = nil
+        }
         textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.endOfDocument)
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

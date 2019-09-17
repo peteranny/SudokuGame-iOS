@@ -11,7 +11,8 @@ import UIKit
 protocol WordPuzzleViewDataSource {
     var numberOfGridsInRow: Int { get }
     var numberOfGridsInColumn: Int { get }
-    func grid(at: IndexPath) -> Int
+    func grid(at: IndexPath) -> Int?
+    func isFixed(at: IndexPath) -> Bool
     var indexPathForHighlightedGrid: IndexPath? { get }
 }
 
@@ -56,10 +57,12 @@ class WordPuzzleView: UIView {
                 let y = gridHeight * CGFloat(j) + CGFloat(j) * 2 + 1
                 let origin = CGPoint(x: x, y: y)
                 let grid = CGRect(origin: origin, size: size)
-                if let label = dataSource?.grid(at: IndexPath(row: i, section: j)) {
+                let indexPath = IndexPath(row: i, section: j)
+                if let label = dataSource?.grid(at: indexPath), let isFixed = dataSource?.isFixed(at: indexPath) {
                     draw(
                         "\(label)",
                         with: UIFont.systemFont(ofSize: UIFont.systemFontSize),
+                        with: isFixed ? .black : .red,
                         in: grid
                     )
                 }
@@ -67,13 +70,17 @@ class WordPuzzleView: UIView {
         }
     }
     
-    func draw(_ s: String, with font: UIFont, in contextRect: CGRect) {
+    func draw(_ s: String, with font: UIFont, with color: UIColor, in contextRect: CGRect) {
         let fontHeight = font.pointSize
         let yOffset = (contextRect.height - fontHeight) / 2.0
         let textRect = CGRect(x: contextRect.minX, y: contextRect.minY + yOffset, width: contextRect.width, height: fontHeight)
         let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         style.alignment = NSTextAlignment.center
-        (s as NSString).draw(in: textRect, withAttributes: [NSAttributedString.Key.paragraphStyle: style])
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.paragraphStyle: style,
+            NSAttributedString.Key.foregroundColor: color,
+        ]
+        (s as NSString).draw(in: textRect, withAttributes: attributes)
     }
     
     func indexPath(on point: CGPoint) -> IndexPath {

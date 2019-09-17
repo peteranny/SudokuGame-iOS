@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbW-E2-cC7" customClass="WordPuzzleView" customModule="WordPuzzleGame" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <rect key="frame" x="22.5" y="168.5" width="330" height="330"/>
                                 <subviews>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6jb-x5-Boq">
                                         <rect key="frame" x="8" y="8" width="97" height="30"/>
@@ -35,17 +35,26 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="BAu-sW-lKE"/>
+                                    <constraint firstAttribute="width" constant="330" id="BAu-sW-lKE"/>
                                     <constraint firstAttribute="width" secondItem="gbW-E2-cC7" secondAttribute="height" multiplier="1:1" id="ikC-TI-XAi"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="FTO-RO-sdl" appends="YES" id="ivG-9A-g23"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-ou-NV8">
+                                <rect key="frame" x="168" y="517" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="didTapResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Bz-gV-oWs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gbW-E2-cC7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K10-gl-BfL"/>
+                            <constraint firstItem="2mf-ou-NV8" firstAttribute="centerX" secondItem="gbW-E2-cC7" secondAttribute="centerX" id="Rau-7K-GgN"/>
+                            <constraint firstItem="2mf-ou-NV8" firstAttribute="top" secondItem="gbW-E2-cC7" secondAttribute="bottom" constant="18.5" id="Ysq-a7-lfj"/>
                             <constraint firstItem="gbW-E2-cC7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ybU-9m-ocr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
